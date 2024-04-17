@@ -9,18 +9,18 @@
 
     .dashboard-balances
       .balances-bar
-        .balance-block
-          p total balance
-          p $#{current_user.balance_detail[:balance]}
-        .balance-block
-          p you owe
-          p $#{current_user.balance_detail[:total_you_owe]}
-        .balance-block
-          p you are owed
-          p $#{current_user.balance_detail[:total_you_are_owed]}
+          .balance-block
+            p total balance
+            p $#{current_user.balance_detail[:balance]}
+          .balance-block
+            p you owe
+            p $#{current_user.balance_detail[:total_you_owe]}
+          .balance-block
+            p you are owed
+            p $#{current_user.balance_detail[:total_you_are_owed]}
       .dashboard-detail
         .detail-block
-          h2.detail-title you owe
+            h2.detail-title you owe
             - current_user.balance_detail[:you_owe].each do |expense_split|
               .user-detail
                 img.user-img alt="profile" src="https://cdn.icon-icons.com/icons2/1378/PNG/512/avatardefault_92824.png" /
@@ -45,4 +45,4 @@
         = render "static/shared/expense_form", expense: @expense
       .modal-footer
         button.btn.btn-secondary data-bs-dismiss="modal" type="button"  Close
-        = render "static/shared/not_friend_list"
+= render "static/shared/not_friend_list"
