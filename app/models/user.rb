@@ -21,7 +21,6 @@ class User < ApplicationRecord
     User.where.not(id: id) - all_friends
   end
 
-  #For calculating balace details and for getting you_owe and you_are_owed list for current user
   def balance_detail
     balance_detail = {}
     you_owe_list = you_owe
