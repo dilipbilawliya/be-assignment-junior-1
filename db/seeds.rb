@@ -7,4 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 
-Fabricate.times(10, :user)
+10.times do
+  User.create!(
+    name: Faker::Name.name,
+    email: Faker::Internet.email,
+    mobile_number: Faker::PhoneNumber.phone_number,
+    password: Faker::Alphanumeric.alpha(number: 10)
+  )
+end
